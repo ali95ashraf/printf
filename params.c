@@ -1,6 +1,3 @@
-//
-// Created by Ali Ashraf on 13/11/2023.
-//
 #include "main.h"
 
 /**

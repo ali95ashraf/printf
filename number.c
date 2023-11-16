@@ -15,7 +15,7 @@ char *convert(long int num, int base, int flags, params_t *parameters)
     char sign = 0;
     char *ptr;
     unsigned long n = num;
-    (void)parameters;  // Unused parameters, added to avoid compiler warning
+    (void)parameters;  /* Unused parameters, added to avoid compiler warning */
 
     if (!(flags & CONVERT_UNSIGNED) && num < 0)
     {

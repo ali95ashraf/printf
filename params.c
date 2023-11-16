@@ -19,5 +19,5 @@ void init_params(params_t *parameters, va_list ap)
     parameters->h_modifier = 0;
     parameters->l_modifier = 0;
     parameters->width = 0;
-    (void)ap;  // Unused parameter, added to avoid compiler warning
+    (void)ap;  /* Unused parameter, added to avoid compiler warning */
 }

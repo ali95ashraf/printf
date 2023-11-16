@@ -1,6 +1,3 @@
-//
-// Created by Ali Ashraf on 13/11/2023.
-//
 #include "main.h"
 /**
  * get_specifier - finds the format func
@@ -10,7 +7,7 @@
 int (*get_specifier(char *s)) (va_list ap, params_t *parameters)
 {
 
-    specifier_t specifiers [] =
+    specifier_t specifiers[] =
             {
             {"c", print_char},
             {"d", print_int},

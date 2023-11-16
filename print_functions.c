@@ -1,6 +1,3 @@
-//
-// Created by Ali Ashraf on 14/11/2023.
-//
 #include "main.h"
 /**
  * print_char - prints character
@@ -23,7 +20,7 @@ int print_char(va_list ap, params_t *parameters)
     if (!parameters->minus_flag)
         sum += _putchar(ch);
 
-    return sum;
+    return (sum);
 }
 
 /*
@@ -57,49 +54,37 @@ int print_int(va_list ap, params_t *parameters)
 */
 int print_string(va_list ap, params_t *parameters)
 {
-    char *str = va_arg(ap, char *);
-    char pad_char = ' ';
+    char *str = va_arg(ap, char *), pad_char = ' ';
     unsigned int pad = 0, sum = 0, i = 0, j;
 
     (void)parameters;
-
     switch ((int)(!str))
-    {
-        case 1:
-            str = NULL_STRING;
+    case 1:
+        str = NULL_STRING;
 
-            j = pad = _strlen(str);
+        j = pad = _strlen(str);
+        if (parameters->precision < pad)
+            j = pad = parameters->precision;
 
-            if (parameters->precision < pad)
-                j = pad = parameters->precision;
-
-            if (parameters->minus_flag)
-            {
-                if (parameters->precision != UINT_MAX)
-                    for (i = 0; i < pad; i++)
-                        sum += _putchar(*str++);
-                else
-                    sum += _puts(str);
-            }
-
-            while (j++ < parameters->width)
-                sum += _putchar(pad_char);
-
-            if (!parameters->minus_flag)
-            {
-                if (parameters->precision != UINT_MAX)
-                    for (i = 0; i < pad; i++)
-                        sum += _putchar(*str++);
-                else
-                    sum += _puts(str);
-            }
-            break;
-
-        default:
-            break;
-    }
-
-    return sum;
+        if (parameters->minus_flag)
+        {
+            if (parameters->precision != UINT_MAX)
+                for (i = 0; i < pad; i++)
+                    sum += _putchar(*str++);
+            else
+                sum += _puts(str);
+        }
+        while (j++ < parameters->width)
+            sum += _putchar(pad_char);
+        if (!parameters->minus_flag)
+        {
+            if (parameters->precision != UINT_MAX)
+                for (i = 0; i < pad; i++)
+                    sum += _putchar(*str++);
+            else
+                sum += _puts(str);
+        }
+        return (sum);
 }
 
 /* print_percent - prints string
@@ -113,7 +98,7 @@ int print_percent(va_list ap, params_t *parameters)
 {
     (void)ap;
     (void)parameters;
-    return _putchar('%');
+    return (_putchar('%'));
 }
 
 /**
@@ -132,7 +117,6 @@ int print_s(va_list ap, params_t *parameters)
 
     if ((int)(!str))
         return _puts(NULL_STRING);
-
     for (; *str; str++)
     {
         if ((*str > 0 && *str < 32) || *str >= 127)
@@ -140,10 +124,8 @@ int print_s(va_list ap, params_t *parameters)
             sum += _putchar('\\');
             sum += _putchar('x');
             hex = convert(*str, 16, 0, parameters);
-
             if (!hex[1])
                 sum += _putchar('0');
-
             sum += _puts(hex);
         }
         else
@@ -151,6 +133,5 @@ int print_s(va_list ap, params_t *parameters)
             sum += _putchar(*str);
         }
     }
-
-    return sum;
+    return (sum);
 }

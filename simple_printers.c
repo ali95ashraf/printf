@@ -1,6 +1,3 @@
-//
-// Created by Ali Ashraf on 14/11/2023.
-//
 #include "main.h"
 /**
 * print_from_to - prints a range of char addresses
@@ -42,7 +39,7 @@ int print_rev(va_list ap, params_t *parameters)
         for (; len > 0; len--, str--)
             sum += _putchar(*str);
     }
-return (sum);
+    return (sum);
 }
 
 /*
@@ -78,4 +75,3 @@ int print_rot13(va_list ap, params_t *parameters)
     }
     return (count);
 }
-

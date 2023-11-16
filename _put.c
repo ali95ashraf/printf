@@ -13,7 +13,7 @@ int _puts(char *str)
     char *a = str;
 
     while (*str)
-        _putchar (*str++);
+        _putchar(*str++);
     return (str - a);
 }
 /*
@@ -25,16 +25,15 @@ int _puts(char *str)
 */
 
 int _putchar(int c) {
-    static int i = 0;
-    static char buf[OUTPUT_BUF_SIZE] = {0};
+    static int i;
+    static char buf[OUTPUT_BUF_SIZE];
 
-    if (i == OUTPUT_BUF_SIZE || c == BUF_FLUSH) {
+    if (c == OUTPUT_BUF_SIZE || i >= BUF_FLUSH) {
         write(1, buf, i);
         i = 0;
     }
 
     if (c != BUF_FLUSH)
         buf[i++] = c;
-
-    return 1;
+    return (1);
 }

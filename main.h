@@ -1,14 +1,11 @@
-//
-// Created by Ali Ashraf on 13/11/2023.
-//
+#ifndef _PRINTF_H
+#define _PRINTF_H
 
-#ifndef _PRINTF_MAIN_H
-#define _PRINTF_MAIN_H
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h> /* task 4 */
-#include <limits.h>
-#include <stdlib.h>
+#include "stdarg.h"
+#include "stdio.h"
+#include "unistd.h"
+#include "limits.h"
+#include "stdlib.h"
 
 #define OUTPUT_BUF_SIZE 1024  /* task 4 */
 #define BUF_FLUSH -1            /* task 4 */
@@ -111,4 +108,4 @@ char *get_precision (char *p, params_t *parameters, va_list);
 /* _prinf.c module */
 int _printf(const char *format, ...);
 
-#endif //_PRINTF_MAIN_H
+#endif

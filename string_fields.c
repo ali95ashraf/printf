@@ -1,6 +1,3 @@
-//
-// Created by Ali Ashraf on 14/11/2023.
-//
 #include "main.h"
 /**
  * get_precision - gets the precision from the format string
@@ -18,7 +15,6 @@ char *get_precision(char *p, params_t *parameters, va_list ap)
         return p;
 
     p++; // Move to the character after '.'
-
     if (*p == '*')
     {
         // If precision is specified as '*', get it from the argument list
@@ -34,7 +30,5 @@ char *get_precision(char *p, params_t *parameters, va_list ap)
 
     // Update the precision in the parameters struct
     parameters->precision = d;
-
-    return p; // Return the new pointer position in the format string
+    return (p); // Return the new pointer position in the format string
 }
-

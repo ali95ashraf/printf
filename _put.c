@@ -26,7 +26,7 @@ int _putchar(int c)
 	static int i;
 	static char buf[OUTPUT_BUF_SIZE];
 
-	if (c == OUTPUT_BUF_SIZE || i >= BUF_FLUSH)
+	if (c == BUF_FLUSH || i >= OUTPUT_BUF_SIZE)
 	{
 		write(1, buf, i);
 		i = 0;

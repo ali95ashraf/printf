@@ -62,7 +62,7 @@ typedef struct specifier
 int _puts(char *str);
 int _putchar(int c);
 
-/* print functions.c module */
+/* print_functions.c module */
 int print_char(va_list ap, params_t *parameters);          /* task 0 */
 int print_int(va_list ap, params_t *parameters);      /* task 1 */
 int print_string(va_list ap, params_t *parameters);        /* task 0 */
@@ -81,7 +81,7 @@ int get_flag(char *s, params_t *parameters);
 int get_modifier(char *s, params_t *parameters);
 char *get_width(char *s, params_t *parameters, va_list ap);
 
-/* convert number.c module */
+/* convert_number.c module */
 int print_hex(va_list ap, params_t *parameters);        /* task 3 */
 int print_HEX(va_list ap, params_t *parameters);        /* task 3 */
 int print_binary(va_list ap, params_t *parameters);    /* task 2 */
@@ -92,7 +92,7 @@ int print_from_to(char *start, char *stop, char *except);
 int print_rev(va_list ap, params_t *parameters); /* task 13 */
 int print_rot13(va_list ap, params_t *parameters); /* task 14 */
 
-/* print number.c module */
+/* print_number.c module */
 int _isdigit(int c);
 int _strlen(char *s);
 int print_number(char *str, params_t *parameters);
@@ -102,7 +102,7 @@ int print_number_left_shift(char *str, params_t *parameters);
 /* params.c module */
 void init_params(params_t *parameters, va_list ap);
 
-/* string fields.c module */
+/* string_fields.c module */
 char *get_precision(char *p, params_t *parameters, va_list);
 
 /* _prinf.c module */

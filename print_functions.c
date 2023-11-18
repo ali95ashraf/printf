@@ -42,7 +42,7 @@ int print_int(va_list ap, params_t *parameters)
     else
         l = (int)va_arg(ap, int);
 
-    return print_number(convert(l, 10, 0, parameters), parameters);
+    return (print_number(convert(l, 10, 0, parameters), parameters));
 }
 
 /**
@@ -116,7 +116,7 @@ int print_s(va_list ap, params_t *parameters)
     int sum = 0;
 
     if ((int)(!str))
-        return _puts(NULL_STRING);
+        return (_puts(NULL_STRING));
     for (; *str; str++)
     {
         if ((*str > 0 && *str < 32) || *str >= 127)
